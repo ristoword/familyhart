@@ -1,7 +1,10 @@
 /**
  * Migrazioni additive SQLite (idempotenti)
  */
+import { ensureBaseSchema } from './schema.js';
+
 export function runMigrations(db) {
+  ensureBaseSchema(db);
   const cols = db.prepare('PRAGMA table_info(users)').all();
   const hasBeta = cols.some((c) => c.name === 'beta_access_status');
   if (!hasBeta) {

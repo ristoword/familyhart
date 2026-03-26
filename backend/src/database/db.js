@@ -7,7 +7,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import { runMigrations } from './migrate.js';
-import { ensureBaseSchema } from './schema.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dbPath = path.resolve(path.join(__dirname, '../../'), config.database.path);
@@ -19,5 +18,4 @@ if (!fs.existsSync(dbDir)) {
 
 export const db = new Database(dbPath);
 db.pragma('journal_mode = WAL');
-ensureBaseSchema(db);
 runMigrations(db);
