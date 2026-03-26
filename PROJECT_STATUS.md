@@ -7,6 +7,10 @@ Sistema pronto per utenti reali con tracking bug e raccolta feedback, senza camb
 
 **Nota deploy operativo:** Family Hart = deploy autonomo su Railway; Gestione Semplificata = sola vetrina/accesso esterno.
 
+Deploy target confermato:
+- Backend Railway da `backend/`
+- Frontend Railway da root progetto
+
 ---
 
 ## Completato

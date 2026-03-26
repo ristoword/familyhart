@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "start:railway": "node src/server.js",
+    "start:railway": "npm run init-db && node src/server.js",
     "start:staging": "NODE_ENV=staging node src/server.js",
     "dev": "node --watch src/server.js",
     "seed": "node src/database/seed.js",

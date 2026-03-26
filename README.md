@@ -245,6 +245,49 @@ File di riferimento: `render.yaml` (blueprint da adattare).
    - push
    - WebRTC
 
+## Deploy Railway
+
+Configurazione consigliata per deploy autonomo Family Hart su Railway.
+
+### Backend (`/backend`)
+
+- **Root Directory**: `backend`
+- **Build Command**: `npm install`
+- **Start Command**: `npm run start:railway`
+  - esegue `init-db` idempotente e poi avvia API/socket
+
+**Env obbligatorie primo avvio**
+
+- `NODE_ENV=production`
+- `JWT_SECRET=<segreto forte>`
+- `CLIENT_URL=https://<frontend-familyhart>.up.railway.app`
+- `CORS_ORIGINS=https://<frontend-familyhart>.up.railway.app,https://<gestione-semplificata-domain>`
+- `DATABASE_PATH=/data/familyhart.db` (volume Railway montato)
+- `PUSH_VAPID_PUBLIC_KEY=<chiave>`
+- `PUSH_VAPID_PRIVATE_KEY=<chiave>`
+- `PUSH_VAPID_SUBJECT=mailto:<mail>`
+
+### Frontend (root progetto)
+
+- **Root Directory**: repository root (`.`)
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: usare il runtime static hosting Railway (publish `dist/`)
+
+**Env obbligatorie primo avvio**
+
+- `VITE_API_URL=https://<backend-familyhart>.up.railway.app`
+- `VITE_SOCKET_URL=https://<backend-familyhart>.up.railway.app`
+- `VITE_STUN_URL=stun:stun.l.google.com:19302`
+- `VITE_TURN_URL` / `VITE_TURN_USERNAME` / `VITE_TURN_CREDENTIAL` (se TURN attivo)
+
+### Verifica rapida post deploy
+
+1. `GET https://<backend>/health` -> `ok: true`
+2. Login frontend riuscito
+3. Socket realtime connesso
+4. Push registrabile (HTTPS + permessi)
+5. Chiamata WebRTC 1:1 audio/video
+
 ## Test rapidi
 
 - **Socket realtime**: login da 2 browser, invia chat/sos e verifica update live
