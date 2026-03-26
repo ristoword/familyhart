@@ -1,0 +1,135 @@
+.login-page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--fh-bg-primary);
+}
+
+.login-content {
+  width: 100%;
+  max-width: 360px;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo-icon {
+  font-size: 4rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+}
+
+.app-name {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--fh-accent), #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.app-tagline {
+  font-size: 0.95rem;
+  color: var(--fh-text-secondary);
+}
+
+.login-form {
+  margin-bottom: 24px;
+}
+
+.login-error {
+  color: var(--fh-danger);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fh-text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  background: var(--fh-bg-card);
+  border: 1px solid var(--fh-border);
+  border-radius: var(--fh-radius);
+  color: var(--fh-text-primary);
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+  color: var(--fh-text-muted);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--fh-accent);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--fh-text-muted);
+  font-size: 0.875rem;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--fh-border);
+}
+
+.login-divider span {
+  padding: 0 16px;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-social {
+  width: 100%;
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 1.1rem;
+}
+
+.btn-create-family {
+  width: 100%;
+  background: transparent;
+  color: var(--fh-accent);
+  border: 2px solid var(--fh-accent);
+}
+
+.btn-create-family:hover {
+  background: var(--fh-accent-soft);
+}

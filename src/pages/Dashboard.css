@@ -1,0 +1,197 @@
+.dashboard-page {
+  min-height: 100dvh;
+  padding: 24px 20px 100px;
+  background: var(--fh-bg-primary);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sos-quick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--fh-danger-soft);
+  border: 2px solid var(--fh-danger);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sos-quick-btn:hover {
+  background: var(--fh-danger);
+  transform: scale(1.05);
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  color: var(--fh-text-secondary);
+}
+
+.dashboard-location-prompt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--fh-accent-soft);
+  border: 1px solid var(--fh-accent);
+  border-radius: var(--fh-radius);
+  margin-bottom: 16px;
+}
+
+.dashboard-location-prompt p {
+  flex: 1;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.user-position-card {
+  padding: 16px;
+  background: var(--fh-bg-card);
+  border: 1px solid var(--fh-border);
+  border-radius: var(--fh-radius);
+  margin-bottom: 20px;
+}
+
+.user-position-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.user-position-card p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.user-position-time {
+  font-size: 0.8rem;
+  color: var(--fh-text-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+.status-card {
+  background: var(--fh-bg-card);
+  border-radius: var(--fh-radius-lg);
+  padding: 20px;
+  margin-bottom: 28px;
+  border: 1px solid var(--fh-border);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-indicator[data-safe="true"] .status-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--fh-success-soft);
+  color: var(--fh-success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.status-indicator[data-safe="false"] .status-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--fh-warning-soft);
+  color: var(--fh-warning);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.status-indicator h3 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.status-indicator p {
+  font-size: 0.85rem;
+  color: var(--fh-text-muted);
+}
+
+.members-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--fh-text-secondary);
+}
+
+.member-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--fh-bg-card);
+  border-radius: var(--fh-radius);
+  padding: 16px;
+  border: 1px solid var(--fh-border);
+  transition: border-color 0.2s;
+}
+
+.member-card:hover {
+  border-color: var(--fh-accent);
+}
+
+.member-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.member-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.member-info h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.member-meta {
+  font-size: 0.8rem;
+  color: var(--fh-text-muted);
+  margin-top: 4px;
+}
+
+.btn-small {
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}

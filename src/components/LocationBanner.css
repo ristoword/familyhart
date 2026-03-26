@@ -1,0 +1,33 @@
+.location-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--fh-warning-soft);
+  border: 1px solid var(--fh-warning);
+  border-radius: var(--fh-radius);
+  margin-bottom: 16px;
+}
+
+.location-banner-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.location-banner-text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--fh-text-primary);
+  margin: 0;
+}
+
+.location-banner-btn {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--fh-warning);
+  color: var(--fh-bg-primary);
+  border: none;
+  border-radius: var(--fh-radius-sm);
+  cursor: pointer;
+}

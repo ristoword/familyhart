@@ -1,0 +1,59 @@
+# FAMILY HART – STATO PROGETTO (memo rapida)
+
+*Ultimo aggiornamento: beta privata attiva (rollout controllato), con raccolta bug/feedback.*
+
+---
+
+## FASE ATTUALE
+
+**Beta privata attiva** su base staging stabile.  
+Focus: utenti reali, feedback concreto, fix mirati senza toccare design o struttura.
+
+---
+
+## COMPLETATO (sintesi)
+
+- Auth JWT, famiglia, luoghi sicuri, chat, SOS, notifiche, posizione, geofence, appuntamenti ed eventi (backend + UI).
+- **Socket.io** realtime + **polling** fallback.
+- **WebRTC 1:1** audio/video reale, signaling su socket.
+- **Web Push** (VAPID, SW), hardening (rate limit, CORS, logging).
+- **Staging nel repo:** `backend/.env.staging.example`, `.env.staging.example` (frontend), `npm run start:staging` / `npm run build:staging`, `render.yaml`, `docs/DEPLOY_STAGING.md`, `docs/qa-staging-checklist.md`.
+- Ottimizzazioni leggere: throttle posizione server, fix race socket client, chunk `react-vendor`, banner se socket realtime assente.
+
+---
+
+## IN CORSO
+
+- Esecuzione test reali con utenti beta (desktop + mobile, multi-browser).
+- Raccolta bug in `docs/bug-tracking.md`.
+- Raccolta feedback qualitativo in `docs/feedback-beta.md`.
+
+---
+
+## DOVE RIPRENDERE (prossima sessione)
+
+1. **Far testare** i flussi reali ai beta tester (login, chat, SOS, posizione, geofence, eventi, chiamate).
+2. **Registrare ogni bug** in `docs/bug-tracking.md` (gravità + stato).
+3. **Raccogliere feedback UX** in `docs/feedback-beta.md`.
+4. **Applicare solo fix mirati** sui bug reali emersi.
+5. Aggiornare `PROJECT_STATUS.md` a fine ciclo.
+
+---
+
+## REGOLE FISSE
+
+- NON modificare design.
+- NON rompere auth, famiglia, GPS, geofence, chat, SOS, agenda, socket, WebRTC, push.
+- Mobile-first e fallback se backend/socket non disponibili.
+
+---
+
+## RIFERIMENTI FILE
+
+| Cosa | Dove |
+|------|------|
+| Stato dettagliato / roadmap | `PROJECT_STATUS.md` |
+| QA manuale | `docs/qa-staging-checklist.md` |
+| Bug tracking | `docs/bug-tracking.md` |
+| Feedback tester | `docs/feedback-beta.md` |
+| Istruzioni generali | `README.md` |

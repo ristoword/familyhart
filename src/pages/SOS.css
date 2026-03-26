@@ -1,0 +1,205 @@
+.sos-page {
+  min-height: 100dvh;
+  padding: 20px 20px 100px;
+  background: var(--fh-bg-primary);
+}
+
+.sos-page .page-header {
+  margin-bottom: 24px;
+}
+
+.sos-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+  margin-bottom: 24px;
+}
+
+.sos-button {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--fh-bg-card);
+  border: 4px solid var(--fh-danger);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+}
+
+.sos-button:hover {
+  background: var(--fh-danger-soft);
+  transform: scale(1.05);
+}
+
+.sos-button.active {
+  background: var(--fh-danger);
+  animation: sos-pulse 0.5s ease-out;
+}
+
+@keyframes sos-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 30px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.sos-button-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fh-danger);
+  letter-spacing: 0.1em;
+}
+
+.sos-button.active .sos-button-text {
+  color: white;
+}
+
+.sos-button-hint {
+  font-size: 0.7rem;
+  color: var(--fh-text-muted);
+  margin-top: 4px;
+}
+
+.sos-button.active .sos-button-hint {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.quick-actions h3,
+.sos-history h3 {
+  font-size: 1rem;
+  color: var(--fh-text-secondary);
+  margin-bottom: 16px;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  border-radius: var(--fh-radius);
+  border: 1px solid var(--fh-border);
+  background: var(--fh-bg-card);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quick-action-btn:hover {
+  border-color: var(--fh-accent);
+  background: var(--fh-accent-soft);
+}
+
+.quick-action-btn.danger:hover {
+  border-color: var(--fh-danger);
+  background: var(--fh-danger-soft);
+}
+
+.quick-action-btn.warning:hover {
+  border-color: var(--fh-warning);
+  background: var(--fh-warning-soft);
+}
+
+.qa-icon {
+  font-size: 1.75rem;
+}
+
+.qa-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--fh-text-primary);
+  text-align: center;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--fh-bg-card);
+  border-radius: var(--fh-radius);
+  border: 1px solid var(--fh-border);
+}
+
+.history-icon {
+  font-size: 1.5rem;
+}
+
+.history-content {
+  flex: 1;
+}
+
+.history-title {
+  font-size: 0.95rem;
+  color: var(--fh-text-primary);
+  margin-bottom: 4px;
+}
+
+.history-time {
+  font-size: 0.8rem;
+  color: var(--fh-text-muted);
+}
+
+.history-status {
+  font-size: 0.8rem;
+  color: var(--fh-warning);
+  font-weight: 500;
+}
+
+.history-status.resolved {
+  color: var(--fh-success);
+}
+
+.resolve-btn {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--fh-success);
+  background: var(--fh-success-soft, rgba(34, 197, 94, 0.15));
+  color: var(--fh-success);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.resolve-btn:hover {
+  background: var(--fh-success);
+  color: white;
+}
+
+.sos-call-btn {
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  border-radius: 12px;
+  border: 1px solid var(--fh-accent);
+  background: var(--fh-accent-soft, rgba(59, 130, 246, 0.15));
+  color: var(--fh-accent);
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.sos-call-btn:hover {
+  background: var(--fh-accent);
+  color: white;
+}
+
+.history-status {
+  display: flex;
+  align-items: center;
+}

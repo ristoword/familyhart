@@ -1,0 +1,18 @@
+# Render Blueprint — adatta i nomi e URL.
+# I servizi non sono creati automaticamente finché non colleghi il repo su Render.
+# Documentazione dettagliata: README / docs/DEPLOY_STAGING.md
+
+services:
+  - type: web
+    name: family-hart-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: staging
+      - key: PORT
+        value: 3001
+      # Imposta su dashboard: JWT_SECRET, CORS_ORIGINS, CLIENT_URL, DATABASE_PATH, PUSH_VAPID_*
