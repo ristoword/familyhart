@@ -25,6 +25,21 @@ app.use(express.json({ limit: config.security.jsonLimit }));
 app.use(sanitizeBody);
 app.use(createRateLimit({ windowMs: config.security.apiRateWindowMs, max: config.security.apiRateMax }));
 
+// Browser su URL backend: reindirizza al frontend (l'app React è su un altro servizio / dominio)
+app.get('/', (req, res) => {
+  const appUrl = config.clientUrl || '';
+  if (appUrl.startsWith('http')) {
+    return res.redirect(302, appUrl);
+  }
+  res.type('html').send(`<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Hart API</title></head><body style="font-family:system-ui,sans-serif;max-width:36rem;margin:2rem auto;padding:0 1rem;">
+<h1>Family Hart API</h1>
+<p>Questo è il server API. L’interfaccia web va aperta sull’URL del frontend (es. Vite su Railway).</p>
+<p><a href="/health">GET /health</a> · <a href="/api/health">GET /api/health</a></p>
+</body></html>`);
+});
+
 app.get('/health', (req, res) => {
   res.json({ ok: true, service: 'family-hart-api', uptimeSec: Math.floor(process.uptime()) });
 });
