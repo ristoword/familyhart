@@ -16,8 +16,15 @@ if (process.env.NODE_ENV === 'staging') {
 
 const parseList = (s) => (s || '').split(',').map((x) => x.trim()).filter(Boolean);
 
+/** PORT da env (Railway lo inietta). Ignora valori non numerici. */
+function parsePort(raw) {
+  const n = parseInt(String(raw ?? '').trim(), 10);
+  if (Number.isFinite(n) && n >= 0 && n <= 65535) return n;
+  return 3001;
+}
+
 export const config = {
-  port: parseInt(process.env.PORT || '3001', 10),
+  port: parsePort(process.env.PORT),
   env: process.env.NODE_ENV || 'development',
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
   corsOrigins: parseList(process.env.CORS_ORIGINS || 'http://localhost:5173'),
