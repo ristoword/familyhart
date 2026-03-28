@@ -9,6 +9,7 @@
     "start:staging": "NODE_ENV=staging node src/server.js",
     "dev": "node --watch src/server.js",
     "seed": "node src/database/seed.js",
+    "seed:test-user": "node src/database/seedTestUserCli.js",
     "init-db": "node src/database/init.js"
   },
   "dependencies": {

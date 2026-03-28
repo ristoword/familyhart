@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes/index.js';
 import { config } from './config/index.js';
+import { db } from './database/db.js';
 import { createRateLimit } from './middleware/rateLimit.js';
 import { requestLogger } from './middleware/requestLogger.js';
 import { sanitizeBody } from './middleware/inputGuard.js';
@@ -47,6 +48,15 @@ app.get('/health', (req, res) => {
 app.get('/api/health', (req, res) => {
   res.json({ ok: true, service: 'family-hart-api', uptimeSec: Math.floor(process.uptime()) });
 });
+
+if (config.env === 'development') {
+  app.get('/debug/users', (req, res) => {
+    const rows = db.prepare(
+      'SELECT id, email, name, role_type, family_id, beta_access_status, created_at FROM users ORDER BY created_at',
+    ).all();
+    res.json(rows);
+  });
+}
 
 app.use('/api', routes);
 
